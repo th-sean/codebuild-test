@@ -17,7 +17,6 @@ def lambda_handler(event, context):
         get_secret_value_response = client.get_secret_value(
             SecretId=secret_name
         )
-        print(get_secret_value_response)
     except ClientError as e:
         # For a list of exceptions thrown, see
         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
@@ -27,3 +26,4 @@ def lambda_handler(event, context):
     secret = get_secret_value_response['SecretString']
 
     # Your code goes here.
+    print(secret)
